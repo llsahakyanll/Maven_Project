@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="SimpleType">
+        <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0"/>
+            <xsd:pattern value="\d+\.\d{2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Item">
+        <xsd:sequence>
+            <xsd:element name="title">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string"/>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="category">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string"/>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="author">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string"/>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="rout">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="about" type="Item"/>
+                <xsd:element name="item">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:restriction base="xsd:decimal">
+                                <xsd:attribute name="version" type="xsd:string" use="required" fixed="newest">
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="SimpleType"/>
+                                    </xsd:simpleType>
+                                </xsd:attribute>
+                            </xsd:restriction>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="price">
+                    <xsd:simpleType>
+                        <xsd:restriction base="SimpleType"/>
+                    </xsd:simpleType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

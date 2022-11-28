@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE catalog
+        [
+                <!ELEMENT catalog (book)*>
+                <!ELEMENT book (title|author_name|date|price)*>
+                <!ELEMENT title (#PCDATA)>
+                <!ELEMENT author_name (#PCDATA)>
+                <!ELEMENT date (#PCDATA)>
+                <!ELEMENT price (#PCDATA)>
+                <!ATTLIST price
+                        currency CDATA #REQUIRED>
+                ]>
+
+<catalog>
+    <book>
+        <title>Java Book</title>
+        <author_name>Sahak Sahakyan</author_name>
+        <date>26-11-2022</date>
+        <price currency="USD">20</price>
+    </book>
+</catalog>

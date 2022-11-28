@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name="SimpleDecimal">
+        <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="router">
+        <xsd:simpleType>
+            <xsd:restriction base="SimpleDecimal">
+                <xsd:pattern value="\d+\.\d{2}"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>
+
+</xsd:schema>
