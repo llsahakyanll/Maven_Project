@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <rout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="myFile.xsd">
+      xsi:noNamespaceSchemaLocation="src/main/resources/myFile.xsdesources/myFile.xsd">
     <about>
         <title>Java 11</title>
         <category>Book</category>
